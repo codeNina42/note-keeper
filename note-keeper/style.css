@@ -1,0 +1,49 @@
+:root{
+  --bg:#0f1720;
+  --card:#0b1220;
+  --accent:#ff385c;
+  --muted:#8892a6;
+  --text:#e6eef8;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh;
+  font-family:Inter, system-ui, Arial;
+  background:linear-gradient(180deg,#071029 0%,#0b1220 100%);
+  color:var(--text); display:flex; align-items:flex-start; justify-content:center;
+  padding:36px;
+}
+.container{width:100%; max-width:900px}
+h1{margin:0 0 16px 0; font-size:28px; text-align:center}
+.note-form{background:var(--card); padding:16px; border-radius:10px; box-shadow:0 6px 18px rgba(2,6,23,.6)}
+.note-form input, .note-form textarea{
+  width:100%; padding:10px 12px; border-radius:8px; border:1px solid rgba(255,255,255,.04);
+  background:transparent; color:var(--text); margin-bottom:10px; resize:vertical;
+}
+.note-form textarea{min-height:90px}
+.controls{display:flex; gap:8px}
+button{
+  background:var(--accent); color:white; border:none; padding:10px 14px; border-radius:8px; cursor:pointer;
+}
+button.muted{background:transparent; border:1px solid rgba(255,255,255,.06); color:var(--muted)}
+.toolbar{display:flex; gap:8px; margin:14px 0; align-items:center}
+#search{flex:1; padding:8px 10px; border-radius:8px; background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.04)}
+#sort{padding:8px 10px; border-radius:8px; background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.04)}
+
+.notes{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px}
+
+.note{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:12px; border-radius:10px; min-height:100px; position:relative;
+  border:1px solid rgba(255,255,255,0.03);
+}
+.note .meta{font-size:12px; color:var(--muted); margin-bottom:6px}
+.note h3{margin:0 0 8px 0; font-size:16px; color:var(--text)}
+.note p{margin:0; white-space:pre-wrap; color:#dfe9f2}
+.note .actions{position:absolute; right:10px; top:10px; display:flex; gap:6px}
+.action-btn{background:transparent; border:1px solid rgba(255,255,255,.06); color:var(--muted); padding:6px 8px; border-radius:6px; cursor:pointer; font-size:13px}
+.action-btn.danger{border-color:rgba(255,50,50,.15); color:#ff9aa2}
+.empty{padding:20px; text-align:center; color:var(--muted); background:transparent}
+@media(max-width:520px){
+  .controls{flex-direction:column}
+}
